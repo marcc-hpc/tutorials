@@ -5,4 +5,6 @@ allowed-tags:
   - outline
   - help
   - connect
-  - session
+  - session  - outline
+  - help
+  - connect
