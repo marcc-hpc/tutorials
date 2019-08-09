@@ -20,9 +20,9 @@ toc: false
                      </span>
                  </div>
                  <div class="panel-body">
-                     <h4>Getting started</h4>
-                     <p>Introductory short course.</p>
-                     <a href="/shortcourse_intro.html" class="btn btn-primary">Begin tutorial.</a>
+                     <h4>Short Course</h4>
+                     <p>Start using MARCC as quickly as possible.</p>
+                     <a href="{{site.url}}{{site.baseurl}}/shortcourse_intro.html" class="btn btn-primary">Begin tutorial</a>
                  </div>
              </div>
          </div>
