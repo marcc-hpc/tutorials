@@ -60,6 +60,8 @@ kramdown:
  hard_wrap: false
  syntax_highlighter: rouge
 
+
+
 # filter used to process markdown. note that kramdown differs from github-flavored markdown in some subtle ways
 
 collections:
@@ -108,8 +110,7 @@ description: "Tutorial series for the Maryland Advanced Research Computing Cente
 # the description is used in the feed.xml file
 
 # needed for sitemap.xml file only
-# url: http://idratherbewriting.com
-# baseurl: /documentation-theme-jekyll
-
+# url: http://bradleyrp.github.io
+# baseurl: /marcc-tutorials
 
 github: [metadata]
