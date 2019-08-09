@@ -1,0 +1,23 @@
+entries:
+- title: Sidebar
+  product: Short course
+  version: 0.1
+  folders:
+  - title: Introduction
+    output: web
+    folderitems:
+    - title: Introduction
+      url: /shortcourse_intro.html
+      output: web
+    - title: Extra help
+      url: /shortcourse_resources.html
+      output: web
+  - title: Connecting
+    output: web
+    folderitems:
+    - title: Prerequisites
+      url: /shortcourse_connect_prereq.html
+      output: web
+    - title: Logging on
+      url: /shortcourse_connect_logon.html
+      output: web

@@ -1,0 +1,29 @@
+---
+title: "MARCC Tutorials"
+keywords: tutorials listing
+sidebar: shortcourse_sidebar
+permalink: index.html
+summary: This documentation covers the tutorial series at the Maryland Advanced Research Computing Center (MARCC). They are self-guided but may also serve as a guide for an in-person introduction to this shared computational resource.
+toc: false
+---
+
+<div class="row">
+         <div class="col-lg-12">
+             <h2 class="page-header">Tutorials</h2>
+         </div>
+         <div class="col-md-3 col-sm-6">
+             <div class="panel panel-default text-center">
+                 <div class="panel-heading">
+                     <span class="fa-stack fa-5x">
+                           <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                           <i class="fa fa-play-circle fa-stack-1x fa-inverse"></i>
+                     </span>
+                 </div>
+                 <div class="panel-body">
+                     <h4>Getting started</h4>
+                     <p>Introductory short course.</p>
+                     <a href="/shortcourse_intro.html" class="btn btn-primary">Begin tutorial.</a>
+                 </div>
+             </div>
+         </div>
+</div>
