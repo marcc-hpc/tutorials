@@ -6,18 +6,69 @@ entries:
   - title: Introduction
     output: web
     folderitems:
-    - title: Introduction
+    - title: Objectives
       url: /shortcourse_intro.html
       output: web
+    - title: Concepts
+      url: /shortcourse_concepts.html
+      output: web
+    - title: Allocations
+      url: /shortcourse_allocations.html
+      output: web
     - title: Extra help
-      url: /shortcourse_resources.html
+      url: /shortcourse_help.html
       output: web
   - title: Connecting
     output: web
     folderitems:
-    - title: Prerequisites
-      url: /shortcourse_connect_prereq.html
+    - title: Required software
+      url: /shortcourse_prereq.html
       output: web
-    - title: Logging on
-      url: /shortcourse_connect_logon.html
+    - title: Login to the home directory
+      url: /shortcourse_login.html
+      output: web
+    - title: Editing text files
+      url: /shortcourse_text.html
+      output: web
+    - title: Transferring files
+      url: /shortcourse_transfer.html
+      output: web
+    - title: Faster transfers
+      url: /shortcourse_globus.html
+      output: web
+  - title: Scheduler
+    output: web
+    folderitems:
+    - title: Batch jobs
+      url: /shortcourse_slurm.html
+      output: web
+    - title: Interactive jobs
+      url: /shortcourse_interact.html
+      output: web
+    - title: Job arrays
+      url: /shortcourse_job_array.html
+      output: web
+    - title: Parallism
+      url: /shortcourse_parallel.html
+      output: web
+  - title: Software
+    output: web
+    folderitems:
+    - title: Modules
+      url: /shortcourse_slurm.html
+      output: web
+    - title: Environments
+      url: /shortcourse_interact.html
+      output: web
+    - title: Containers
+      url: /shortcourse_job_array.html
+      output: web
+  - title: Portals
+    output: web
+    folderitems:
+    - title: Jupyter
+      url: /shortcourse_slurm.html
+      output: web
+    - title: RStudio
+      url: /shortcourse_interact.html
       output: web
