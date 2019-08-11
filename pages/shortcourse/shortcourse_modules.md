@@ -260,4 +260,4 @@ The `~/privatemodules` method described above allows you to compile and install 
 
 {% include note.html content="Separating the software dependencies from your workflow and using the module system to select your software is essential for developing reproducible, portable workflows." %}
 
-<a class="btn btn-primary" href="shortcourse_python.html">Next: python</a>
+<a class="btn btn-primary" href="shortcourse_python.html">Next: Python</a>

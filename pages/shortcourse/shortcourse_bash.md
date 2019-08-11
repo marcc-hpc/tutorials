@@ -183,5 +183,5 @@ SPECIAL_VALUE=8675309
 
 Regular expressions are an [invaluable method for parsing text](https://www.regular-expressions.info/) in many programs.
 
-<a class="btn btn-primary" href="shortcourse_bash.html">Next: software modules</a>
+<a class="btn btn-primary" href="shortcourse_modules.html">Next: software modules</a>
 
