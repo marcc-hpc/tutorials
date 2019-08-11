@@ -27,6 +27,20 @@ To see the available software, use the `module avail` command. You can always us
 
 This list is a menu of software that you are free to load and unload. When you load a module, we add the location of its associated programs to your `$PATH` so you can have access to them.
 
+~~~
+$ ml bowtie
+$ bowtie --version
+bowtie version 1.1.1
+64-bit
+Built on localhost.localdomain
+Tue Sep 30 15:43:08 EDT 2014
+Compiler: gcc version 4.1.2 20080704 (Red Hat 4.1.2-54)
+Options: -O3 -m64  -Wl,--hash-style=both -DPOPCNT_CAPABILITY  
+Sizeof {int, long, long long, void*, size_t, off_t}: {4, 8, 8, 8, 8, 8}
+~~~
+
+Checking the version confirms that we have access to the program.
+
 ### Searching by keyword
 
 You can search for modules with the keyword command.

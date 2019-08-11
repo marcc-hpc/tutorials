@@ -27,6 +27,10 @@ The prompt `[rbradle8@jhu.edu@bc-login02 ~]$` includes your username and login n
 
 Our website offers links for [resetting your password](https://password.marcc.jhu.edu/?action=sendtoken) and [retrieving your 2FA tokens](https://password.marcc.jhu.edu/?action=qrretrieve). If these methods fail, please email our help desk at [marcc-help@marcc.jhu.edu](mailto:marcc-help).
 
+## Graphical interfaces
+
+While *Blue Crab* is intended for standard, text-based HPC applications, we also offer [web-based portal tools](https://www.marcc.jhu.edu/getting-started/interactive-development/) for visualization purposes. Some users may nevertheless wish to use graphical applications that require a direct `X11` connection via tunneling. To use tunneling, your ssh command should include the `ssh -X` or `ssh -Y` flags and you must [install some extra software](shortcourse_prereq.html#tunneling-windows).
+
 ## Where am I?
 
 Use the `ls -l` command to *list* the contents of your home directory.
