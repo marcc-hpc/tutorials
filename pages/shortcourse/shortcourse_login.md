@@ -113,4 +113,8 @@ As with any Linux system, we interact with the machine through a "shell" which r
 
 The [Bash for beginners tutorial](https://www.tldp.org/LDP/Bash-Beginners-Guide/html/) is a good place to learn more.
 
+The linux operating system provides a number of useful utilities that you can call directly from BASH, including `pwd` which tells you the present-working directory and `nproc` which tells you how many processors are available. There are [literally hundreds more](https://dev.to/awwsmm/101-bash-commands-and-tips-for-beginners-to-experts-30je).
+
+The dollar sign syntax (`$`) is used to access BASH variables like `$USER`. The *namespace* provided by the BASH environment will be indispensable later on.
+
 <a class="btn btn-primary" href="shortcourse_text.html">Next: editing text</a>

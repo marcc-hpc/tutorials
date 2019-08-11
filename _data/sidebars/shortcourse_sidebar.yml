@@ -39,17 +39,14 @@ entries:
   - title: Scheduler
     output: web
     folderitems:
-    - title: Batch jobs
+    - title: "SLURM: the scheduler"
       url: /shortcourse_slurm.html
       output: web
     - title: Interactive jobs
       url: /shortcourse_interact.html
       output: web
-    - title: Job arrays
-      url: /shortcourse_job_array.html
-      output: web
-    - title: Parallism
-      url: /shortcourse_parallel.html
+    - title: Parallel job arrays
+      url: /shortcourse_jobarrays.html
       output: web
   - title: Software
     output: web
@@ -61,7 +58,7 @@ entries:
       url: /shortcourse_interact.html
       output: web
     - title: Containers
-      url: /shortcourse_job_array.html
+      url: /shortcourse_containers.html
       output: web
   - title: Portals
     output: web
