@@ -39,7 +39,7 @@ entries:
   - title: Scheduler
     output: web
     folderitems:
-    - title: "SLURM: the scheduler"
+    - title: "The scheduler (SLURM)"
       url: /shortcourse_slurm.html
       output: web
     - title: Interactive jobs
@@ -51,21 +51,18 @@ entries:
   - title: Software
     output: web
     folderitems:
-    - title: Modules
-      url: /shortcourse_slurm.html
+    - title: Shell environments
+      url: /shortcourse_bash.html
       output: web
-    - title: Environments
-      url: /shortcourse_interact.html
+    - title: "Software modules (Lmod)"
+      url: /shortcourse_modules.html
+      output: web
+    - title: Python and virtual environments
+      url: /shortcourse_python.html
+      output: web
+    - title: The R language
+      url: /shortcourse_rlang.html
       output: web
     - title: Containers
       url: /shortcourse_containers.html
-      output: web
-  - title: Portals
-    output: web
-    folderitems:
-    - title: Jupyter
-      url: /shortcourse_slurm.html
-      output: web
-    - title: RStudio
-      url: /shortcourse_interact.html
       output: web

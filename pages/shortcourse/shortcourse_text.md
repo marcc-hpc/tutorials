@@ -29,6 +29,12 @@ $ cat my_script
 
 Both of these report that the file is empty. The `more` command is useful for scrolling through long text files while using the <kbd>spacebar</kbd> to advance your view. The `cat` command is short for "concatenate" and takes multiple arguments, printing the contents of each file argument to the screen. This can be useful for joining many text files into one larger text file.
 
+### Escaping a program
+
+Whenever you see the `--More--` text at the bottom of the screen you can use the <kbd>spacebar</kbd> to advance or <kbd>q</kbd> to exit. You can also use <kbd>q</kbd> to exit manual pages and results of the `less` command, which is similar to `more` but offers `vi` functionality we will describe below.
+
+If you're really stuck inside a program, you can use <kbd>ctrl+c</kbd> to interrupt it. Use this sparingly, as some programs will completely exit when you do this.
+
 ## Editing the file
 
 Open the file using `vi` or `vim`, which is short for "visual".

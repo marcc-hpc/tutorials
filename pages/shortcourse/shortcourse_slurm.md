@@ -1,5 +1,5 @@
 ---
-title: "SLURM: the scheduler"
+title: "The scheduler (SLURM)"
 permalink: shortcourse_slurm.html
 sidebar: shortcourse_sidebar
 folder: shortcourse
@@ -61,7 +61,7 @@ $ sbatch script.sh
 
 Check the status of the job with `squeue -u $USER` or more simply, `sqme`. First the job will report a  state (`ST`) that is pending (`PD`) and after a moment it will be running (`R`). About 30 seconds later it will be absent from the list. If you `ls` this directory, you will see an output file.
 
-![job submission](figs/slurm-submit.png)
+![job submission](figs/snap-slurm-submit.png)
 
 If you `cat` the log file, you can see the results of our calculation:
 

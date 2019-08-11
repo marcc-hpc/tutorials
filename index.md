@@ -3,7 +3,7 @@ title: "MARCC Tutorials"
 keywords: tutorials listing
 sidebar: shortcourse_sidebar
 permalink: index.html
-summary: This documentation covers the tutorial series at the Maryland Advanced Research Computing Center (MARCC). They are self-guided but may also serve as a guide for an in-person introduction to this shared computational resource.
+summary: This documentation covers the tutorial series at the Maryland Advanced Research Computing Center (MARCC). The documentation can be either self-guided or serve as a reference for an in-person tutorial.
 toc: false
 ---
 
@@ -46,3 +46,5 @@ toc: false
 
 
 </div>
+
+The documentation theme is provided by [Tom Johnson](https://idratherbewriting.com/documentation-theme-jekyll/mydoc_about.html). The license can be found [here](https://github.com/bradleyrp/marcc-tutorials/blob/gh-pages/licenses/LICENSE).

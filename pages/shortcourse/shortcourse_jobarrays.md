@@ -46,3 +46,5 @@ In your job scripts, several BASH variables may help you control the inputs and 
 You should use job arrays whenever it easy to customize a parameter sweep with a single index. It is also essential that each job last longer than a few minutes, otherwise the inherent lag time required for a highly-decentralized system like SLURM to schedule your job will make it prohibitively expensive. Other parallism methods require far less overhead and may be more suitable for your calculations.
 
 {% include note.html content="Job arrays represent one of many ways to parallelize your code to take advantage of the massive scale of *Blue Crab*. There are many other ways to parallelize your code." %}
+
+<a class="btn btn-primary" href="shortcourse_bash.html">Next: shell environments</a>
