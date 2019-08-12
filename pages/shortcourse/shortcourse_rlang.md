@@ -102,6 +102,6 @@ If your analysis requires visualization, you have three options.
 
 ### RStudio
 
-If you are interested in graphical tools that provide R and Python in a web browser, see the [portal tools](https://www.marcc.jhu.edu/getting-started/interactive-development/) section of our website. 
+If you are interested in graphical tools that provide R and Python in a web browser, see the [portal tools](https://www.marcc.jhu.edu/getting-started/interactive-development/) section of our website or skip to the [Jupyter section](shortcourse_portal_jupyter.html), which provides a detailed example using Jupyter which can also be used with `rstudio_server_start` to access RStudio.
 
-<a class="btn btn-primary" href="shortcourse_containers.html">Next: containers</a>
+<a class="btn btn-primary" href="shortcourse_portal_jupyter.html">Next: Jupyter</a>

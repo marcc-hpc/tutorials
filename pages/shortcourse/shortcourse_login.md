@@ -106,6 +106,12 @@ You may be included in a group with no scratch quota because it serves another p
 
 Each user is entitled to only `20GB` in their home directory. Research groups are typically allocated `1TB` on Lustre, shared between each users' `~/scratch` and the group's `~/work` directory, as well as `1TB` on the shared `~/data` folder. 
 
+### Temporary files
+
+While *Blue Crab* is nearly identical to a standard Linux machine in many ways, there are critical differences, most of which relate to the storage system, as you can already tell. Many programs use an excessive amount of temporary space. Because our operating system exists in memory, this space is limited and we lack the typical "overflow" area found on a spinning disk.
+
+Users should carefully set the BASH variable called `$TMPDIR` to use a location in their `~/scratch` folder to write any moderate amount of temporary files. It is the user's responsibility to ensure that their codes can use this variable (or some other variable) to control temporary files. If they do not, they run the risk of crash a compute node, which oftentimes causes problems for other users.
+
 ## The BASH Shell
 
 As with any Linux system, we interact with the machine through a "shell" which receives commands in a text format. We use the Bourne Again SHell (BASH) by default. Learning about the shell is beyond the scope of this course, but there are ample online resources. For now, consider the following rules.

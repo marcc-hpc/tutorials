@@ -169,6 +169,6 @@ If you only need to install a few packages, `pip install --user` is the easiest 
 
 ## Portal tools
 
-If you are interested in portal tools that provide R and Python in a web browser, see the [portal tools](https://www.marcc.jhu.edu/getting-started/interactive-development/) section of our website.
+If you are interested in portal tools that provide R and Python in a web browser, see the [portal tools](https://www.marcc.jhu.edu/getting-started/interactive-development/) section of our website or skip to the [Jupyter section](shortcourse_portal_jupyter.html).
 
 <a class="btn btn-primary" href="shortcourse_rlang.html">Next: the R language</a>

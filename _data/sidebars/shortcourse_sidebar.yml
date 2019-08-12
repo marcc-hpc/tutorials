@@ -63,6 +63,9 @@ entries:
     - title: The R language
       url: /shortcourse_rlang.html
       output: web
+    - title: "Portal tools: Jupyter"
+      url: /shortcourse_portal_jupyter.html
+      output: web
     - title: Containers
       url: /shortcourse_containers.html
       output: web
