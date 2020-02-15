@@ -47,6 +47,6 @@ You should also visit the `Connection, Data` section of the configuration and en
 
 ## Tunneling windows
 
-Users who wish to use graphical user interfaces (GUIs) other than our portal tools (discussed later) should also install an `X11` client. You can use [Xquartz](https://www.xquartz.org/) for MacOs and [Xming](https://sourceforge.net/projects/xming/) for Windows, if necessary.
+Users who wish to use graphical user interfaces (GUIs) other than our portal tools (discussed later) should also install an `X11` client. You can use [Xquartz](https://www.xquartz.org/) for MacOs and [Xming](https://sourceforge.net/projects/xming/) for Windows if necessary.
 
 <a class="btn btn-primary" href="shortcourse_login.html">Next: logging on</a>

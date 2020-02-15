@@ -10,6 +10,8 @@ toc: false
 
 The `R` language is a very popular open-source language for statistical computing and visualization. We offer several versions of `R` which itself has access to an enormous library of packages from the [comprehensive R archive network](https://cran.r-project.org/mirrors.html) (CRAN). In this section we will show you how to install packages from CRAN on your account.
 
+{% include important.html content='Extra documentation and guides can be found at <code><a href="https://marcc-hpc.github.io/esc/">marcc-hpc.github.io/esc</a></code>. Our <a href="https://marcc-hpc.github.io/esc/common/r-packages">latest set of software modules</a> also provides a method for using R packages directly from our module system' %}
+
 ## Selecting an `R` version
 
 Recall that the [modules system](shortcourse_modules.html) is [hierarchical](shortcourse_modules.html#hierarchical-modules) which means that the software stack uses only a single compiler at one time. Since `R` will often compile codes when you install packages, it is essential that you *keep track of which `R` version you are using*. For this tutorial we will use the default Intel compiler and `R` version `3.5.1`. Load these modules with the following commands.

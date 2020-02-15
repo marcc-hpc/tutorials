@@ -79,7 +79,9 @@ ssh -N -L 8035:gpu001:8035 rbradley@login.marcc.jhu.edu
 http://localhost:8035/?token=c8d1f73c9ed0a95ad3bba63906d863cbc2549e1ede6a28a8
 ~~~
 
-At this point the server is ready. Open a seperate terminal and use the `ssh` command to open another connection. ***Your terminal will stall if this works!*** Do not worry if the command does not return. This means that the tunnel is working.
+{% include important.html content='In the following step you will open a connection to our cluster from your personal computer. Be sure to run the following command on the same machine where you are running your web browser.' %}
+
+At this point the server is ready. Open a seperate terminal on your local machine (i.e. a laptop or desktop with a web browser) and not on the remote cluster. Use the `ssh` command to open another connection. ***Your terminal will stall if this works!*** Do not worry if the command does not return. This means that the tunnel is working.
 
 ~~~
 $ ssh -N -L 8035:gpu001:8035 rbradley@login.marcc.jhu.edu
@@ -143,7 +145,15 @@ $ jupyter_marcc lab
 
 ### Piggyback a tunnel
 
-In the demonstrations above we followed the instructions explicitly and started an independent tunnel in a separate terminal. We could also "piggyback" a tunnel off of our existing one. Start in a terminal on MARCC. 
+If you have multiplexing enabled, you can also use the recommended `ssh` command in a separate terminal as long as you use your `ssh` alias, which is `marcc` in the example below. 
+
+~~~
+$ ssh -N -L 8035:gpu001:8035 marcc
+~~~
+
+This is another way to avoid typing in your 2FA and password. These two methods make it slightly more convenient to open up a connection to your Jupter server. *Multiplexing is the preferred method.*
+
+In the demonstrations above we followed the instructions explicitly and started an independent tunnel in a separate terminal. An alternative to multiplexing is to *piggyback* a tunnel off of our existing one. Start in a terminal on MARCC. 
 
 While holding the <kbd>shift</kbd> key, type <kbd>~C</kbd>. You will see a `ssh>` prompt appear. Read the instructions from your SLURM log to get the `ssh` connection. Take only the `-L` portion and run this inside the prompt.
 
@@ -153,14 +163,6 @@ Forwarding port.
 ~~~
 
 Once you do this, you can use <kbd>ctrl+c</kbd> to leave the `ssh>` prompt.
-
-If you have multiplexing enabled, you can also use the recommended `ssh` command in a separate terminal as long as you use your `ssh` alias, which is `marcc` in the example below. 
-
-~~~
-$ ssh -N -L 8035:gpu001:8035 marcc
-~~~
-
-This is another way to avoid typing in your 2FA and password. These two methods make it slightly more convenient to open up a connection to your Jupter server.
 
 ### Jupyter notebook from an interactive job
 
@@ -231,7 +233,7 @@ When using this method, it is important to note that you can only start *one ser
 
 If you wish to use a custom Anaconda environment inside of a Jupyter notebook, your Anaconda environment must contain three critical packages: `jupyter`, `pip`, `nb_conda`, and `nb_conda_kernals`. These packages convey the environment to the Jupyter notebook server.
 
-Here is an example `requirements.yaml` file for building such an environment. 
+Here is an example `requirements.yaml` file for building such an environment. Please see our [guide to custom environments](https://marcc-hpc.github.io/esc/common/python-environments#conda) for more details.
 
 ~~~
 channels:

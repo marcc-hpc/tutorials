@@ -101,7 +101,7 @@ $ scp -pr my_source_data marcc:~/my_source_data
 $ scp -pr my_source_data marcc:~/my_source_data/
 ~~~
 
-If the folder is absent, the first command will have the desired effect but could just as easily use `~/` as the destination. However if the folder is present, then the two commands above are equivalent, and you will have a `my_source_data/my_source_data` folder.
+If the folder is absent, the first command will have the desired effect but could just as easily use `~/` as the destination. However if the folder is present, then the two commands above are no longer equivalent, and you will have a `my_source_data/my_source_data` folder.
 
 This principle can be illustrated with a simple set of copy commands:
 
@@ -122,7 +122,7 @@ You can avoid this error by using an explicit `/` suffix at the end of all direc
 rsync -arivP source_folder/ host:~/path/to/source_folder/
 ~~~
 
-In that case, you can imagine that there is also a `*` wildcard character which copies all files in that directory.
+In that case, you should imagine that there is also a `*` wildcard character which copies all files in that directory.
 
 ## The data transfer node
 

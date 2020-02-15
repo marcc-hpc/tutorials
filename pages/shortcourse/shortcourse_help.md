@@ -6,7 +6,7 @@ folder: shortcourse
 toc: false
 ---
 
-Users who encounter difficulty using MARCC should first consult [documentation ](https://www.marcc.jhu.edu/) for information about technical details, updates to our software and hardware, and guides for the most common tasks. The [frequently asked questions page](https://www.marcc.jhu.edu/getting-started/faqs/) is a good place to start. 
+Users who encounter difficulty using MARCC should first consult our [main website](https://www.marcc.jhu.edu/) for information about technical details, updates to our software and hardware, and guides for the most common tasks. We also maintain extra documentation at [`marcc-hpc.github.io/esc`](https://marcc-hpc.github.io/esc). 
 
 If you cannot find the answer to your question in this documentation, you may open a ticket with our help desk at:
 

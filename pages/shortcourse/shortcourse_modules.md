@@ -8,6 +8,8 @@ toc: false
 
 We use an environment system called [Lmod](https://lmod.readthedocs.io/en/latest/) to serve software to all users. Advanced users who wish to install and compile their own software are free to do so as long as they do not require root access. All users are free to use the software modules.
 
+{% include important.html content='Extra documentation and guides can be found at <code><a href="https://marcc-hpc.github.io/esc/">marcc-hpc.github.io/esc</a></code>. We now offer a <a href="https://marcc-hpc.github.io/esc/common/software-modules#new">new set of software modules</a> with extra applications and features.' %}
+
 ## Software modules
 
 When you log on to *Blue Crab*, you will already have access to several default modules.
@@ -116,7 +118,7 @@ $ ml spider LAMMPS/20190208
 
 ### Module prerequisites
 
-This particular copy of LAMMPS depends on a specific compiler and openmpi implementation. To load it, you must load the required modules first.
+This particular copy of LAMMPS depends on a specific compiler and MPI implementation. To load it, you must load the required modules first.
 
 ~~~
 $ module load gcc/5.5.0
@@ -256,7 +258,7 @@ $ myscript
 Hello, World!
 ~~~
 
-The `~/privatemodules` method described above allows you to compile and install any software to a custom location and then easily access it with a 
+The `~/privatemodules` method described above allows you to compile and install any software to a custom location and then easily access it by creating a custom Lua file to update your environment variables (for example the `PATH`) and load your software with a simple `module load` command.
 
 {% include note.html content="Separating the software dependencies from your workflow and using the module system to select your software is essential for developing reproducible, portable workflows." %}
 

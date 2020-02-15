@@ -33,7 +33,7 @@ Instead of copying this script 100 times for each of the input files, you can us
 ./compute_something input_$SLURM_ARRAY_TASK_ID.txt
 ~~~
 
-Submit all 100 jobs with `sbatch script.sh`. Each job will have a job number with an underscore, indicating the "task" ID within the job, for example 12345_1 for the first task, and so on.
+Submit all 100 jobs with `sbatch script.sh`. Each job will have a job number with an underscore, indicating the "task" ID within the job, for example `12345_1` for the first task, and so on.
 
 ## Customizing job arrays
 
@@ -43,7 +43,7 @@ In your job scripts, several BASH variables may help you control the inputs and 
 
 ## When to use Job Arrays
 
-You should use job arrays whenever it easy to customize a parameter sweep with a single index. It is also essential that each job last longer than a few minutes, otherwise the inherent lag time required for a highly-decentralized system like SLURM to schedule your job will make it prohibitively expensive. Other parallism methods require far less overhead and may be more suitable for your calculations.
+You should use job arrays whenever it easy to customize a parameter sweep with a single index. It is also essential that each job last longer than a few minutes, otherwise the inherent lag time required for a highly-decentralized system like SLURM to schedule your job will make it prohibitively expensive. Other parallel methods require far less overhead and may be more suitable for your calculations.
 
 {% include note.html content="Job arrays represent one of many ways to parallelize your code to take advantage of the massive scale of *Blue Crab*. There are many other ways to parallelize your code." %}
 

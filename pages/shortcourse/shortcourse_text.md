@@ -112,7 +112,7 @@ Later we will learn how to effortlessly switch interpreters by [manipulating our
 #!/usr/bin/env python
 ~~~
 
-This translates to "use whichever python is available". Using this hashbang ensures that our scripts can later migrate to other systems without needing to know the precise location of `Python`. The `bash` interpreter is always located at `/bin/bash`, however many other interpreters can be found at other locations.
+This translates to "use whichever python is available" as long as we have already set execute permissions on the file. Using this hashbang ensures that our scripts can later migrate to other systems without needing to know the precise location of `Python`. The `bash` interpreter is always located at `/bin/bash`, however many other interpreters can be found at other locations.
 
 ## More information about `vi`
 
@@ -126,9 +126,5 @@ A full introduction to `vi` or `vim` (one is the "improved" version of the other
 6. To redo a command, use <kbd>control+R</kbd>
 
 For more `vim` tricks, check out [this guide](https://wiki.gentoo.org/wiki/Vim/Guide) or search for innumerable others.
-
-## BASH variables
-
-
 
 <a class="btn btn-primary" href="shortcourse_transfer.html">Next: transferring files</a>

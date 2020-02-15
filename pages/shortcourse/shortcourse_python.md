@@ -10,6 +10,8 @@ toc: true
 
 Python is one of the most popular scripting languages for academic computation. We offer several different versions on *Blue Crab* along with three methods for extending with additional libraries. We will review these methods in this section.
 
+{% include important.html content='Extra documentation and guides can be found at <code><a href="https://marcc-hpc.github.io/esc/">marcc-hpc.github.io/esc</a></code>. We now offer a <a href="https://marcc-hpc.github.io/esc/common/python-environments">extensive guide for using custom environments</a> as well.' %}
+
 ## Python versions
 
 Use the `module spider python` command to list the available versions.
@@ -25,7 +27,7 @@ python/3.7-anaconda-2019.03
 python/3.7
 ~~~
 
-We recommend using the most recent version whenever possible.
+We recommend using the most recent version whenever possible. If you are controlling your Python version with [Anaconda](https://anaconda.org/), please use the `anaconda` module directly. This module allows you to use the `conda` command without manipulating your `~/.bashrc` file, which often causes confusion later on. We recommend using software modules instead of customzing your `~/.bashrc` file.
 
 ## Python packages
 
@@ -37,6 +39,8 @@ In the following section we will install the popular [Numpy](https://www.numpy.o
 
 Load the Python 3.7 module and install the program directly with `pip install --user`. The `--user` flag will install the package to a hidden folder at `~/.local`. Python will check this folder for packages.
 
+{% include important.html content='Please beware that installing package with this method may later interfere with an Anaconda environment.' %}
+
 ~~~
 $ ml python/3.7
 $ pip install --user numpy
@@ -46,13 +50,13 @@ $ python
 '/home-4/rbradle8@jhu.edu/.local/lib/python3.7/site-packages/numpy/__init__.py'
 ~~~
 
-You can see that the numpy package is installed in your home directory. Note that these packages depend on your python version. If you switch Python versions with the `module` command, you may need to install the packages again.
+You can see that the `numpy` package is installed in your home directory. Note that these packages depend on your python version. If you switch Python versions with the `module` command, you may need to install the packages again.
 
 If you receive a "permission denied" error when installing packages with `pip`, this is probably because you have forgotten the `--user` flag and do not have superuser permissions on your computer.
 
 ### 2. Virtual environments
 
-A Python virtual environment provides a *sandbox* or self-contained environment where you can install packages directly. To use a virtual environment, you must first install it, and then activate it. Once you activate it, you will have full privileges to install software inside of it. Later you can deactivate the environment. ]
+A Python virtual environment provides a *sandbox* or self-contained environment where you can install packages directly. To use a virtual environment, you must first install it, and then activate it. Once you activate it, you will have full privileges to install software inside of it. Later you can deactivate the environment.
 
 > Virtual environments are extremely useful for reproducing your workflow. You can carefully control and account for all software packages you have installed inside a virtual environment.
 
@@ -140,7 +144,9 @@ $
 
 Remember to use `conda deactivate` to leave the environment when you are done. In the example above we can use both `pip` and `conda` to install packages. The [Anaconda Cloud](https://anaconda.org/) contains a searchable list of packages and associated channels (e.g. `bioconda`) which provide these packages.
 
-Note that you can use `conda create -p ./conda_env` to use an absolute path for your environment or use `conda create -n conda_env` to use a name instead. When you use a name, the environment is installed in the home directory. Please be mindful of your quota when you install the package with a name. We recommend using an absolute path to keep track of things.
+Note that you can use `conda create -p ./conda_env` to use an absolute path for your environment or use `conda create -n conda_env` to use a name instead. When you use a name, the environment is installed in the home directory. Please be mindful of your quota when you install the package with a name. We recommend using an absolute path to keep track of things. The best alternative is to use `~/data` which has a larger quota.
+
+{% include important.html content='Please do not install software or environments on our Lustre filesystem.' %}
 
 As with the virtual environments, you can also install a conda environment from a single file called a *manifest*. Create a file called `reqs.yaml` with the following contents.
 

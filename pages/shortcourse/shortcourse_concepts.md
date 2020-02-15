@@ -11,7 +11,7 @@ toc: false
 
 ## Physical infrastructure
 
-> Our high performance computing (HPC) system, named *Blue Crab* is a supercomputer, formerly ranked in the [top 500 worldwide](https://www.top500.org/site/50589). Capable of `~1.4 PFLOPS` (a petaflop is one quadrillion floating-point operations per second), it is equivalent to `~10,000` laptop computers and consists of over `23,000` cores and over `800` nodes. The purpose of maintaining such a large computer is to performing computations at massive scale while also serving a very large community of academic researchers.
+> Our high performance computing (HPC) system, named *Blue Crab* is a supercomputer, formerly ranked in the [top 500 worldwide](https://www.top500.org/site/50589). Capable of `~1.4 PFLOPS` (a petaflop is one quadrillion floating-point operations per second), it is equivalent to `~10,000` laptop computers and consists of over `23,000` cores and over `800` nodes. The purpose of maintaining such a large computer is to perform computations at massive scale while also serving a very large community of academic researchers.
 
 ## Terms
 
@@ -19,8 +19,8 @@ We use the following names to describe parts of the machine:
 
 1. `node` a single shelf in a rack. A node is equivalent to a single desktop computer.
 2. `cluster` a network of nodes. *Blue Crab* is a cluster.
-3. `processor` a single electronic circuit. Also known as a `core`.
-4. `memory` random access memory (RAM). Large bandwidth to the `core`.
+3. `processor` a single electronic circuit, also known as a `core`.
+4. `memory` random access memory (RAM) including high bandwidth to the `core`.
 5. `disk` storage on a spinning disk separate from the `node` and comparatively slower than `memory`.
 
 ## Compute hardware
@@ -39,19 +39,21 @@ We offer three kinds of GPUs, all from [NVidia](https://www.nvidia.com/en-us/) w
 2. `5x2` Tesla [P100](https://www.nvidia.com/en-us/data-center/tesla-p100/)
 3. `2x2` Volta [V100](https://www.nvidia.com/en-us/data-center/tesla-v100/)
 
-Like all data centers and HPC resources, we use the `Tesla` line of NVidia products. These are distinct from the consumer line in three ways. First, they are more physically robust, which is a requirement for use in a dense, hot cluster. Second, they often have higher-bandwidth networking required to use many GPUs at once. Third, and most importantly, they include error-correcting code ([ECC](https://en.wikipedia.org/wiki/ECC_memory)) memory which is necessary to prevent data corruption and enables binary-reproducible, double-precision calculations. Current trends in artificial intelligence suggest movement towards single- and half-precicion calculations. These are almost always unsuitable for physics-based calculations.
+Like all data centers and HPC resources, we use the `Tesla` line of NVidia products. These are distinct from the consumer line in three ways. First, they are more physically robust, which is a requirement for use in a dense, hot cluster. Second, they often have higher-bandwidth networking required to use many GPUs at once. Third, and most importantly, they include error-correcting code ([ECC](https://en.wikipedia.org/wiki/ECC_memory)) memory which is necessary to prevent data corruption and enables binary-reproducible, double-precision calculations which are often necessary for physics-based calculations.
 
 ## Storage
 
-*Blue Crab* has two entirely independent file systems. These provide the usual "storage" which holds data on timescales up to months. Storage should not be confused with "memory". The computer memory (i.e. RAM) is physically located on the compute nodes and disappears at the end of your calculation. Memory can swallow a deluge of data coming from a processor. Storage that exists on spinning disks or even solid-state drives can only swallow a tiny trickle in comparison.
+{% include important.html content='Storage guidance is subject to change particularly as we introduce new filesystems. Consult our <a href="https://www.marcc.jhu.edu">main webpage</a> or support staff for help if you are not sure about how to use our filesystems.' %}
+
+*Blue Crab* has two entirely independent file systems. These provide the usual "storage" which holds data on timescales up to months. Storage should not be confused with *memory*. The computer memory (i.e. RAM) is physically located on the compute nodes and disappears at the end of your calculation. Memory can swallow a deluge of data coming from a processor. Storage that exists on the disks that comprise even our best-performing filesystem has a much lower bandwidth than the on-board memory.
 
 ### Lustre storage: the "scratch" system
 
-The fastest storage is provided by a `2PB` (two petabyte, or 2000 terabtyes) [Lustre](http://wiki.lustre.org/Main_Page) system which is connected via [Infiniband](https://en.wikipedia.org/wiki/InfiniBand) (IB) to all compute nodes. We call this the **"scratch"** system because it is meant to be used in a manner similar to memory, that is, it is temporary storage (six months maximum) and is designed to enable high-speed I/O operations. Lustre is not optimal for hosting many tiny files, compiling code, or serving programs (binaries) to your calculations. The `~/scratch` and `~/work` folders (the latter is shared within research groups) occupy the Lustre system.
+The fastest storage is provided by a `2PB` (two petabyte, or 2000 terabtyes) [Lustre](http://wiki.lustre.org/Main_Page) system which is connected via [Infiniband](https://en.wikipedia.org/wiki/InfiniBand) (IB) to all compute nodes. We call this the **"scratch"** system because it is meant to be used in a manner similar to memory, that is, as temporary storage with a maximum lifespan of six months, and is designed to enable high-speed I/O operations. Lustre is not optimal for hosting many tiny files, compiling code, or serving programs (binaries) to your calculations. The `~/scratch` and `~/work` folders (the latter is shared within research groups) occupy the Lustre system.
 
 ### ZFS storage
 
-Home directories at the `~/` and `~/data` folders are hosted on the much larger `12PB` [ZFS](https://en.wikipedia.org/wiki/ZFS) storage system is designed for longer-term (but not permanent!) storage. It is suitable for hosting shared data sets and both inputs and outputs from your calculations. 
+Home directories at the `~/` and `~/data` folders are hosted on the much larger `12PB` [ZFS](https://en.wikipedia.org/wiki/ZFS) storage system is designed for longer-term but still non-permanent storage. It is suitable for hosting shared data sets and both inputs and outputs from your calculations. 
 
 ## Physical plant
 

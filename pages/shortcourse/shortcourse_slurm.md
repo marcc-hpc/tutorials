@@ -6,6 +6,8 @@ folder: shortcourse
 toc: false
 ---
 
+{% include important.html content='Extra documentation and guides can be found at <code><a href="https://marcc-hpc.github.io/esc/">marcc-hpc.github.io/esc</a></code>.' %}
+
 In a [previous section](shortcourse_concepts.html), we explained that *Blue Crab* is a shared resource accessible only via login nodes. Users connect to the login nodes, prepare their calculations, and submit batch jobs to a scheduler.
 
 That scheduler is called `SLURM`, the [simple linux utility for resource management](https://slurm.schedmd.com/overview.html). SLURM controls the compute nodes, and intelligently schedules a vast array of highly heterogeneous calculations in order to maximize utilization (how much of the machine is active at one time), minimize wait times, and allocate the correct resources to each user. SLURM also accounts for the SUs consumed by each research group.
@@ -155,7 +157,7 @@ The answers to these questions will help determine which partition you should us
 
 ### Compiling code
 
-**Do not use `express` or `skylake` to compile code.** The newer architecture
+**Do not use `express` or `skylake` to compile code.** The newer architecture will add special features to your code which are not supported on the vast majority of the machine. Similarly, since our `lrgmem` partition has a slightly older architecture (Ivy Bridge), all code that must run on `lrgmem` should also be compiled there.
 
 ### How to choose a partition
 
@@ -164,16 +166,18 @@ Here is a short guide to choosing a partition. Note that the nomenclature is som
 The name of the `parallel` partition refers to the fact that most jobs use multiple *nodes in parallel* and therefore require MPI-enabled code and the use of the high-speed infiniband network. Note that a single-node, exclusive job is a rare point of intersection for both `shared` and `parallel` because this type of calculation is extremely common.
 
 1. Most jobs can run on the `shared`, `express`, and `skylake` partitions. 
-2. Do not request more than one core if your code does not include multi-threading or parallelism via [OpenMP]() or [MPI]().
+2. Do not request more than one core *if your code does not include multi-threading or parallelism* via [OpenMP](https://www.openmp.org/) or [MPI](https://www.open-mpi.org/) or a manually-compiled parallel toolkit. If you use MPI, you should use `mpiexec` and if you use `OpenMP` i.e. threads, then you should set the BASH variable`$OMP_NUM_THREADS` to the right number of cores.
 2. An exclusive, one-node, 24-core job can run on both `shared` and `parallel`.
-3. If your job requires more than one node and does not require excessive memory or a GPU then you should use the `parallel` partition.
+3. If your job requires more than one node, and does not require excessive memory or a GPU, then you should use the `parallel` partition.
 4. If your job requires more than one node, it *must be an MPI-capable code*. If you're not sure if your code is MPI-capable, then it's probably not. If you have an MPI-capable code, use `--ntasks-per-node` instead of `--cpus-per-task` to request more cores.
 5. If you require smore than `118GB` memory, you must use the large-memory `lrgmem` partitions. Otherwise, if your job requires up to `117992MB`, then you should request a single node on `shared` or `parallel`. We will discuss memory usage in more detail below.
 6. If your job requires only one GPU, then you should not request multiple GPUs. All requests for the GPU partitions should include the `gres` flag (see below). Since the `V100` and `P100` GPUs are scarce, almost all GPU requests should be sent to `gpuk80`.
 
+{% include important.html content='Our sytstem configuration is subject to change. Please consult our <a href="https://www.marcc.jhu.edu/">website</a> for the latest information.' %}
+
 ### MPI jobs
 
-The name for an individual process in a message-processing interface (MPI) code is a "task". MPI is required for 
+The name for an individual process in a message-processing interface (MPI) code is a "task". MPI is required for all communication *between nodes* on our cluster.
 
 ### Requesting GPUs
 
@@ -189,11 +193,11 @@ Do not request multiple GPUs unless you are absolutely certain that your calcula
 
 You may have noticed that the memory limits above are awkward. This is by design. Our compute nodes are disk-less, which means that the operating system resides in memory. We allocate 10GB for the operating system.
 
-More importantly, users should *almost never* need to make a special memory request with SLURM's `--mem` flag. We ensure that we always allocate the maximum available memory for each core that you request. SLURM will charge your account for the number of SUs equivalent to your memory request, even if you use only a single core. If you request `--mem=8GB` and a single core, you will be charged instead for 2 cores, because each core has typically `~5GB` of memory associated with it.
+More importantly, users should ***almost never need to make a special memory request*** with SLURM's `--mem` flag. We ensure that we always allocate the maximum available memory for each core that you request. SLURM will charge your account for the number of SUs equivalent to your memory request, even if you use only a single core. If you request `--mem=8GB` and a single core, you will be charged instead for 2 cores, because each core has typically `~5GB` of memory associated with it.
 
 {% include note.html content="It is almost always best to estimate your memory requirements, and then request enough cores to provide this memory. The only time that you should request explicit memory is if you have a 1-core (i.e. single-threaded) application which requires more than the default memory per core. If you avoid requesting a specific amount of memory, we will allocate the maximum memory automatically." %} 
 
-If you have a single-threaded calculation, then you should request memory with e.g. `#SBATCH --mem=50GB`. This will reserve about half one one node. 
+If you have a single-threaded calculation, then you should request memory with e.g. `#SBATCH --mem=50GB`. This will reserve about half of one node. 
 
 If you have a multi-threaded application, it is best to request cores to match your memory requirement so that you can *also make use of the extra cores*. Here is an example. Imagine that you have a multi-threaded code that can use many cores. You know that it requires between 20-25GB and you wish to optimize the number of SUs you spend. In that case, you should request 5 cores on `shared` because `5x4916 = 24580MB < 25GB`. Some simple arithmetic can help you optimize your core count and SU consumption.
 
@@ -210,5 +214,7 @@ You can also omit `#SBATCH` directives entirely and submit standard bash scripts
 ### Benchmarking
 
 Since MARCC offers its users only a finite amount of hours (SUs), and many codes are not guaranteed to perform twice as fast with twice as many nodes or cores, *we strongly recommend that you benchmark your calculations to find the most efficient set of resources*. The more efficient your calculation, the more calculations you can do with the same allocation.
+
+{% include important.html content='Future allocation of MARCC resources may include a proposal and application process which requires benchmarks and corresponding justifications for the optimal use of our hardware. It is never too early to benchmark your code.' %}
 
 <a class="btn btn-primary" href="shortcourse_interact.html">Next: interactive jobs</a>

@@ -75,9 +75,10 @@ For more details on using Singularity, see the [extensive documentation](https:/
 
 ## Custom containers
 
-It is possible to build a custom container with a remote build service, or by installing Singularity on your local machine. Ask the instructor for more details if you are interested in this option. When *Blue Crab* upgrades to Singularity 3, we will offer instructions for doing this automatically.
+It is possible to build a custom container with a remote build service, or by installing Singularity on your local machine. Ask the instructor for more details if you are interested in this option. When *Blue Crab* upgrades to Singularity 3, we will offer instructions for doing this automatically. Please see our [extra documentation](https://marcc-hpc.github.io/esc/common/singularity) for more details.
 
 ## Conclusion of the short course
 
-> This concludes the short course. Return to the homepage and consult the [MARCC homepage](https://marcc.jhu.edu) for further information. 
+> This concludes the short course. We hope that you have found the exposition of scientific computing topics and our description of our hardware, software, and system to be helpful for your work.
 
+{% include important.html content='Extra documentation and guides can be found at <code><a href="https://marcc-hpc.github.io/esc/">marcc-hpc.github.io/esc</a></code>.' %}

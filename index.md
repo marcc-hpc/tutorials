@@ -10,7 +10,7 @@ toc: false
 <div class="row">
 
  <div class="col-lg-12">
-     <h2 class="page-header">Tutorials</h2>
+     <h2 class="page-header">Resources</h2>
  </div>
  <div class="col-md-3 col-sm-6">
      <div class="panel panel-default text-center">
@@ -38,12 +38,27 @@ toc: false
          </div>
          <div class="panel-body">
              <h4>Homepage</h4>
-             <p>Visit the MARCC homepage for extra documentation.</p>
+             <p>Visit the MARCC homepage.</p>
              <a href="https://www.marcc.jhu.edu" class="btn btn-primary">Visit homepage</a>
          </div>
      </div>
  </div>
 
+ <div class="col-md-3 col-sm-6">
+     <div class="panel panel-default text-center">
+         <div class="panel-heading">
+             <span class="fa-stack fa-5x">
+                   <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                   <i class="fa fa-map fa-stack-1x fa-inverse"></i>
+             </span>
+         </div>
+         <div class="panel-body">
+             <h4>Extras</h4>
+             <p>Extra documentation and guides.</p>
+             <a href="https://www.marcc.jhu.edu" class="btn btn-primary">Visit docs</a>
+         </div>
+     </div>
+ </div>
 
 </div>
 

@@ -9,6 +9,8 @@ folder: shortcourse
 toc: false
 ---
 
+{% include important.html content='Extra documentation and guides can be found at <code><a href="https://marcc-hpc.github.io/esc/">marcc-hpc.github.io/esc</a></code>.' %}
+
 ## Mission
 
 > The mission of the Maryland Advanced Research Computing Center (MARCC) is to enable research, creative undertakings and learning that involve and rely on the use and development of advanced computing and visualization technology. MARCC manages high-performance computing, highly reliable research data storage,  and provides outstanding collaborative scientific support to empower computational research, scholarship, creativity, and innovation.

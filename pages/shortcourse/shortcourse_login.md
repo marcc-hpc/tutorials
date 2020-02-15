@@ -1,5 +1,5 @@
 ---
-title: Login to the home directory
+title: How to log on
 permalink: shortcourse_login.html
 sidebar: shortcourse_sidebar
 folder: shortcourse
@@ -40,7 +40,7 @@ Use the `ls -l` command to *list* the contents of your home directory.
 The listing above provides several columns of (somewhat) useful information. 
 
 1. A permission code e.g. `drwxr-xr-x`
-2. Number of hard links (not relevant yet)
+2. Number of hard links (not very relevant)
 3. Owner of the file or folder
 4. The group
 5. The size in bytes
@@ -60,20 +60,20 @@ The difference between the "real" path above and the name `~` is purely symbolic
 
 ### Storage locations
 
-You can see from the `ls -l` command that we have several symbolic links in our home directory, which itself a symbolic link. These links point to different file systems.
+You can see from the `ls -l` command that we have several symbolic links in our home directory, which itself is a symbolic link. These links point to different file systems.
 
-1. `~/scratch` is your personal scratch space. Use it to store I/O-intensive data used by your calculations. This Lustre filesystem has a limit of 6 months.
-2. `~/work` is your group scratch space. Use it for data shared between group membners. This also occupies the Lustre filesystem and has a limit of 6 months.
+1. `~/scratch` is your personal scratch space. Use it to store I/O-intensive data used by your calculations. This Lustre filesystem has a limit of 6 months. Do not compile code here.
+2. `~/work` is your group scratch space. Use it for data shared between group membners. This also occupies the Lustre filesystem and has a limit of 6 months. Do not compile code here.
 3. `~/data` is your group data location on our ZFS filesystem. This filesystem is larger and slower than the high-performance Lustre filesystem. Although it has no time limit, you should plan to migrate your data before we retire the hardware at then end of its lifespan (typically 5-7 years).
 4. `~` is the home directory and is designed for compiling and executing programs. You may also compile and execute programs from `~/data`. You should never use the Lustre filesystem to compile code.
 
-{% include note.html content="All storage is not created equal. Please think carefully about where your data is located. The scratch system is best for fast I/O operations during your calculations and should be regularly archived to the `~` and `~/data` folders, which should eventually be migrated off of the machine at the conclusion of your research projects. We recommend that you develop a complete plan for the entire lifecycle of your data." %}
+{% include note.html content="All storage is not created equal. Please think carefully about where your data is located. The scratch system is best for fast I/O operations during your calculations and should be regularly archived to the ZFS filesystem and eventually be migrated off of the machine at the conclusion of your research projects. We recommend that you develop a complete plan for the entire lifecycle of your data." %}
 
-{% include note.html content="Scratch is **not backed up** and only the base allocations on `~/data` are backed up without an additional fee. All users should *always* back up their data offsite." %}
+{% include important.html content="Scratch is **not backed up** and only the base allocations on `~/data` are backed up without an additional fee. All users should *always* back up their data offsite." %}
 
 ## Storage quotas
 
-If you put too much data in your home directory `~` you will be forced to remove files with an alternate method called Globus discussed later. You can track your storage usage with two commands. The `zfs_home_quota` command tells you the amount of data in your home directory.
+If you put too much data in your home directory (`~`) you will be forced to remove files with an alternate method called Globus discussed later. You can track your storage usage with two commands. The `zfs_home_quota` command tells you the amount of data in your home directory.
 
 ~~~
 $ zfs_home_quota 
@@ -108,9 +108,9 @@ Each user is entitled to only `20GB` in their home directory. Research groups ar
 
 ### Temporary files
 
-While *Blue Crab* is nearly identical to a standard Linux machine in many ways, there are critical differences, most of which relate to the storage system, as you can already tell. Many programs use an excessive amount of temporary space. Because our operating system exists in memory, this space is limited and we lack the typical "overflow" area found on a spinning disk.
+While *Blue Crab* is nearly identical to a standard Linux machine in many ways, there are critical differences, most of which relate to the storage system, as you can already tell. Many programs use an excessive amount of temporary space. Because our operating system exists in memory, this space is limited and we lack the typical overflow area called *swap space* found on a spinning disk.
 
-Users should carefully set the BASH variable called `$TMPDIR` to use a location in their `~/scratch` folder to write any moderate amount of temporary files. It is the user's responsibility to ensure that their codes can use this variable (or some other variable) to control temporary files. If they do not, they run the risk of crash a compute node, which oftentimes causes problems for other users.
+Users should carefully set the BASH variable called `$TMPDIR` (or sometimes `$TMP` depending on your code) to use a location in their `~/scratch` folder to write any moderate amount of temporary files. It is the user's responsibility to ensure that their codes can use this variable (or some other variable) to control temporary files. If they do not, they run the risk of crash a compute node, which oftentimes causes problems for other users.
 
 ## The BASH Shell
 
