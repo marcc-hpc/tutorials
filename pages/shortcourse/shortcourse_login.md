@@ -65,7 +65,7 @@ You can see from the `ls -l` command that we have several symbolic links in our 
 1. `~/scratch` is your personal scratch space. Use it to store I/O-intensive data used by your calculations. This Lustre filesystem has a limit of 6 months.
 2. `~/work` is your group scratch space. Use it for data shared between group membners. This also occupies the Lustre filesystem and has a limit of 6 months.
 3. `~/data` is your group data location on our ZFS filesystem. This filesystem is larger and slower than the high-performance Lustre filesystem. Although it has no time limit, you should plan to migrate your data before we retire the hardware at then end of its lifespan (typically 5-7 years).
-4. `~` is the home directory and is designed for compiling and executing programs. You may also compile and execute programs from `~/data`. We recommend using Lustre to compile code.
+4. `~` is the home directory and is designed for compiling and executing programs. You may also compile and execute programs from `~/data`. You should never use the Lustre filesystem to compile code.
 
 {% include note.html content="All storage is not created equal. Please think carefully about where your data is located. The scratch system is best for fast I/O operations during your calculations and should be regularly archived to the `~` and `~/data` folders, which should eventually be migrated off of the machine at the conclusion of your research projects. We recommend that you develop a complete plan for the entire lifecycle of your data." %}
 
